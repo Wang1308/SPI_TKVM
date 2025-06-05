@@ -1,0 +1,22 @@
+Time resolution is 1 ps
+PASS (Slave 0): Sent 0xc1, Got 0xc1, Time: 314000 ns
+PASS (Slave 1): Sent 0xbe, Got 0xbe, Time: 586000 ns
+PASS (Slave 2): Sent 0xef, Got 0xef, Time: 898000 ns
+PASS (Slave 3): Sent 0x55, Got 0x55, Time: 1170000 ns
+PASS (Slave 0): Sent 0xaa, Got 0xaa, Time: 1482000 ns
+PASS (Slave 1): Sent 0x00, Got 0x00, Time: 1754000 ns
+PASS (Slave 2): Sent 0xfe, Got 0xfe, Time: 2066000 ns
+PASS (Slave 3): Sent 0xab, Got 0xab, Time: 2338000 ns
+PASS (Slave 0): Sent 0xfa, Got 0xfa, Time: 2650000 ns
+PASS (Slave 1): Sent 0x13, Got 0x13, Time: 2922000 ns
+PASS (Slave 2): Sent 0x08, Got 0x08, Time: 3234000 ns
+PASS (Slave 3): Sent 0x03, Got 0x03, Time: 3506000 ns
+PASS (Slave 0): Sent 0x05, Got 0x05, Time: 3818000 ns
+PASS (Slave 1): Sent 0x02, Got 0x02, Time: 4090000 ns
+PASS (Slave 2): Sent 0x27, Got 0x27, Time: 4402000 ns
+
+=== Test Summary ===
+PASSED: 15
+FAILED: 0
+====================
+$finish called at time : 4482 ns : File "/home/bowang1308/Documents/SPI_DBQ/SPI_DBQ.srcs/sim_1/new/tb_SPI_Master_With_Single_CS.v" Line 159

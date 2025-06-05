@@ -1,0 +1,20 @@
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2023.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot SPI_Master_With_Multi_CS_TB_behav xil_defaultlib.SPI_Master_With_Multi_CS_TB xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/bowang1308/Documents/SPI_DBQ/SPI_DBQ.srcs/sources_1/new/SPI_Master_With_Single_CS.v" Line 1. Module SPI_Master_With_Multi_CS(SPI_MODE=3,CLKS_PER_HALF_BIT=4,CS_INACTIVE_CLKS=10) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/bowang1308/Documents/SPI_DBQ/SPI_DBQ.srcs/sources_1/new/SPI_Master.v" Line 1. Module SPI_Master(SPI_MODE=3,CLKS_PER_HALF_BIT=4,NUM_SLAVES=1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/bowang1308/Documents/SPI_DBQ/SPI_DBQ.srcs/sources_1/new/SPI_Master_With_Single_CS.v" Line 1. Module SPI_Master_With_Multi_CS(SPI_MODE=3,CLKS_PER_HALF_BIT=4,CS_INACTIVE_CLKS=10) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/bowang1308/Documents/SPI_DBQ/SPI_DBQ.srcs/sources_1/new/SPI_Master.v" Line 1. Module SPI_Master(SPI_MODE=3,CLKS_PER_HALF_BIT=4,NUM_SLAVES=1) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.SPI_Master(SPI_MODE=3,CLKS_PER_H...
+Compiling module xil_defaultlib.SPI_Master_With_Multi_CS(SPI_MOD...
+Compiling module xil_defaultlib.SPI_Master_With_Multi_CS_TB
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot SPI_Master_With_Multi_CS_TB_behav

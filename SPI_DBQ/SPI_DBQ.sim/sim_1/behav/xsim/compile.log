@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/bowang1308/Documents/SPI_DBQ/SPI_DBQ.srcs/sources_1/new/SPI_Master.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SPI_Master
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/bowang1308/Documents/SPI_DBQ/SPI_DBQ.srcs/sources_1/new/SPI_Master_With_Single_CS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SPI_Master_With_Multi_CS
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/bowang1308/Documents/SPI_DBQ/SPI_DBQ.srcs/sim_1/new/tb_SPI_Master_With_Single_CS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SPI_Master_With_Multi_CS_TB

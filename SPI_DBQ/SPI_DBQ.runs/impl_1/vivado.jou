@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Tue Jun  3 15:43:23 2025
+# Process ID: 30551
+# Current directory: /home/bowang1308/Documents/SPI_DBQ/SPI_DBQ.runs/impl_1
+# Command line: vivado -log SPI_Master_With_Multi_CS.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source SPI_Master_With_Multi_CS.tcl -notrace
+# Log file: /home/bowang1308/Documents/SPI_DBQ/SPI_DBQ.runs/impl_1/SPI_Master_With_Multi_CS.vdi
+# Journal file: /home/bowang1308/Documents/SPI_DBQ/SPI_DBQ.runs/impl_1/vivado.jou
+# Running On: bowang1308-Precision-M4800, OS: Linux, CPU Frequency: 3201.502 MHz, CPU Physical cores: 4, Host memory: 8226 MB
+#-----------------------------------------------------------
+source SPI_Master_With_Multi_CS.tcl -notrace
