@@ -1,0 +1,5 @@
+`verilator_config
+lint_off -rule DECLFILENAME
+lint_off -rule EOFNEWLINE
+lint_off -rule UNDRIVEN -file "/home/bowang1308/DBQ_designs/SPI_master/runs/RUN_2025-06-05_17-26-58/tmp/477d5d33793b4c5aa37dd0c82398e78c.bb.v"
+lint_off -rule UNUSEDSIGNAL -file "/home/bowang1308/DBQ_designs/SPI_master/runs/RUN_2025-06-05_17-26-58/tmp/477d5d33793b4c5aa37dd0c82398e78c.bb.v"

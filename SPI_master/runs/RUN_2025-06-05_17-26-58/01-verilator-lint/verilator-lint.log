@@ -1,0 +1,13 @@
+%Warning-PINCONNECTEMPTY: /home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:60:8: Cell pin connected by name with empty reference: 'o_SPI_CS'
+   60 |       .o_SPI_CS()  
+      |        ^~~~~~~~
+                          ... For warning description see https://verilator.org/warn/PINCONNECTEMPTY?v=5.018
+                          ... Use "/* verilator lint_off PINCONNECTEMPTY */" and lint_on around source to disable this message.
+%Warning-ASCRANGE: /home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:11:10: Ascending bit range vector: left < right of bit range: [-1:0]
+                                                                             : ... note: In instance 'SPI_Master_With_Multi_CS.SPI_Master_Inst'
+   11 |    input [$clog2(NUM_SLAVES)-1:0] i_Slave_Select,  
+      |          ^
+%Warning-ASCRANGE: /home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:37:7: Ascending bit range vector: left < right of bit range: [-1:0]
+                                                                                           : ... note: In instance 'SPI_Master_With_Multi_CS'
+   37 |   reg [$clog2(CS_INACTIVE_CLKS)-1:0] r_CS_Inactive_Count;
+      |       ^

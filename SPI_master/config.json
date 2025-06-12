@@ -1,0 +1,6 @@
+{
+  "DESIGN_NAME": "SPI_Master_With_Multi_CS",
+  "VERILOG_FILES": ["dir::SPI_Master.v", "dir::SPI_Master_With_Single_CS.v"],
+  "CLOCK_PERIOD": 10,
+  "CLOCK_PORT": "i_Clk"
+}

@@ -1,0 +1,1487 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2024  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)
+Loaded SDC plugin
+
+1. Executing Liberty frontend: /home/bowang1308/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+[INFO] Using SDC file '/home/bowang1308/DBQ_designs/SPI_master/runs/RUN_2025-06-05_17-26-58/06-yosys-synthesis/synthesis.abc.sdc' for ABC…
+
+2. Executing Verilog-2005 frontend: /home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v
+Parsing SystemVerilog input from `/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v' to AST representation.
+Storing AST representation for module `$abstract\SPI_Master'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: /home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v
+Parsing SystemVerilog input from `/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v' to AST representation.
+Storing AST representation for module `$abstract\SPI_Master_With_Multi_CS'.
+Successfully finished Verilog frontend.
+
+4. Executing HIERARCHY pass (managing design hierarchy).
+
+5. Executing AST frontend in derive mode using pre-parsed AST for module `\SPI_Master_With_Multi_CS'.
+Generating RTLIL representation for module `\SPI_Master_With_Multi_CS'.
+
+5.1. Analyzing design hierarchy..
+Top module:  \SPI_Master_With_Multi_CS
+Parameter \SPI_MODE = 0
+Parameter \CLKS_PER_HALF_BIT = 2
+Parameter \NUM_SLAVES = 1
+
+5.2. Executing AST frontend in derive mode using pre-parsed AST for module `\SPI_Master'.
+Parameter \SPI_MODE = 0
+Parameter \CLKS_PER_HALF_BIT = 2
+Parameter \NUM_SLAVES = 1
+Generating RTLIL representation for module `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master'.
+
+5.3. Analyzing design hierarchy..
+Top module:  \SPI_Master_With_Multi_CS
+Used module:     $paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master
+
+5.4. Analyzing design hierarchy..
+Top module:  \SPI_Master_With_Multi_CS
+Used module:     $paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master
+Removing unused module `$abstract\SPI_Master_With_Multi_CS'.
+Removing unused module `$abstract\SPI_Master'.
+Removed 2 unused modules.
+Renaming module SPI_Master_With_Multi_CS to SPI_Master_With_Multi_CS.
+
+6. Generating Graphviz representation of design.
+Writing dot description to `/home/bowang1308/DBQ_designs/SPI_master/runs/RUN_2025-06-05_17-26-58/06-yosys-synthesis/hierarchy.dot'.
+Dumping module SPI_Master_With_Multi_CS to page 1.
+
+7. Executing TRIBUF pass.
+
+8. Executing HIERARCHY pass (managing design hierarchy).
+
+8.1. Analyzing design hierarchy..
+Top module:  \SPI_Master_With_Multi_CS
+Used module:     $paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master
+
+8.2. Analyzing design hierarchy..
+Top module:  \SPI_Master_With_Multi_CS
+Used module:     $paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master
+Removed 0 unused modules.
+
+9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+10. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:111$12 in module SPI_Master_With_Multi_CS.
+Marked 4 switch rules as full_case in process $proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:63$1 in module SPI_Master_With_Multi_CS.
+Marked 2 switch rules as full_case in process $proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:133$73 in module $paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.
+Marked 1 switch rules as full_case in process $proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:125$71 in module $paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.
+Marked 3 switch rules as full_case in process $proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:106$48 in module $paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.
+Marked 3 switch rules as full_case in process $proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:88$37 in module $paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.
+Marked 1 switch rules as full_case in process $proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:76$35 in module $paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.
+Marked 5 switch rules as full_case in process $proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:39$24 in module $paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.
+Removed a total of 0 dead cases.
+
+11. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 6 redundant assignments.
+Promoted 3 assignments to connections.
+
+12. Executing PROC_INIT pass (extract init attributes).
+
+13. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \i_Rst_L in `\SPI_Master_With_Multi_CS.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:63$1'.
+Found async reset \i_Rst_L in `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:133$73'.
+Found async reset \i_Rst_L in `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:125$71'.
+Found async reset \i_Rst_L in `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:106$48'.
+Found async reset \i_Rst_L in `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:88$37'.
+Found async reset \i_Rst_L in `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:76$35'.
+Found async reset \i_Rst_L in `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:39$24'.
+
+14. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~21 debug messages>
+
+15. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\SPI_Master_With_Multi_CS.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:111$12'.
+     1/1: $0\o_RX_Count[1:0]
+Creating decoders for process `\SPI_Master_With_Multi_CS.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:63$1'.
+     1/4: $0\r_TX_Count[1:0]
+     2/4: $0\r_CS_Inactive_Count[1:0]
+     3/4: $0\r_SM_CS[1:0]
+     4/4: $0\o_SPI_CS[3:0]
+Creating decoders for process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:133$73'.
+     1/1: $0\o_SPI_CS[0:0]
+Creating decoders for process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:125$71'.
+     1/1: $0\o_SPI_Clk[0:0]
+Creating decoders for process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:106$48'.
+     1/8: $3$lookahead\o_RX_Byte$47[7:0]$61
+     2/8: $3$bitselwrite$pos$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:116$23[2:0]$60
+     3/8: $2$lookahead\o_RX_Byte$47[7:0]$55
+     4/8: $2$bitselwrite$pos$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:116$23[2:0]$54
+     5/8: $1$lookahead\o_RX_Byte$47[7:0]$53
+     6/8: $1$bitselwrite$pos$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:116$23[2:0]$52
+     7/8: $0\o_RX_DV[0:0]
+     8/8: $0\r_RX_Bit_Count[2:0]
+Creating decoders for process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:88$37'.
+     1/2: $0\r_TX_Bit_Count[2:0]
+     2/2: $0\o_SPI_MOSI[0:0]
+Creating decoders for process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:76$35'.
+     1/2: $0\r_TX_DV[0:0]
+     2/2: $0\r_TX_Byte[7:0]
+Creating decoders for process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:39$24'.
+     1/6: $0\o_TX_Ready[0:0]
+     2/6: $0\r_Trailing_Edge[0:0]
+     3/6: $0\r_Leading_Edge[0:0]
+     4/6: $0\r_SPI_Clk_Edges[4:0]
+     5/6: $0\r_SPI_Clk[0:0]
+     6/6: $0\r_SPI_Clk_Count[1:0]
+
+16. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+17. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\SPI_Master_With_Multi_CS.\o_RX_Count' using process `\SPI_Master_With_Multi_CS.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:111$12'.
+  created $dff cell `$procdff$253' with positive edge clock.
+Creating register for signal `\SPI_Master_With_Multi_CS.\o_SPI_CS' using process `\SPI_Master_With_Multi_CS.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:63$1'.
+  created $adff cell `$procdff$258' with positive edge clock and positive level reset.
+Creating register for signal `\SPI_Master_With_Multi_CS.\r_SM_CS' using process `\SPI_Master_With_Multi_CS.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:63$1'.
+  created $adff cell `$procdff$263' with positive edge clock and positive level reset.
+Creating register for signal `\SPI_Master_With_Multi_CS.\r_CS_Inactive_Count' using process `\SPI_Master_With_Multi_CS.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:63$1'.
+  created $adff cell `$procdff$268' with positive edge clock and positive level reset.
+Creating register for signal `\SPI_Master_With_Multi_CS.\r_TX_Count' using process `\SPI_Master_With_Multi_CS.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:63$1'.
+  created $adff cell `$procdff$273' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.\o_SPI_CS' using process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:133$73'.
+  created $adff cell `$procdff$278' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.\o_SPI_Clk' using process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:125$71'.
+  created $adff cell `$procdff$283' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.\o_RX_DV' using process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:106$48'.
+  created $adff cell `$procdff$288' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.\o_RX_Byte' using process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:106$48'.
+  created $adff cell `$procdff$293' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.\r_RX_Bit_Count' using process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:106$48'.
+  created $adff cell `$procdff$298' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$bitselwrite$pos$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:116$23' using process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:106$48'.
+  created $adff cell `$procdff$303' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$lookahead\o_RX_Byte$47' using process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:106$48'.
+  created $adff cell `$procdff$308' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.\o_SPI_MOSI' using process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:88$37'.
+  created $adff cell `$procdff$313' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.\r_TX_Bit_Count' using process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:88$37'.
+  created $adff cell `$procdff$318' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.\r_TX_DV' using process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:76$35'.
+  created $adff cell `$procdff$323' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.\r_TX_Byte' using process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:76$35'.
+  created $adff cell `$procdff$328' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.\o_TX_Ready' using process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:39$24'.
+  created $adff cell `$procdff$333' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.\r_SPI_Clk_Count' using process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:39$24'.
+  created $adff cell `$procdff$338' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.\r_SPI_Clk' using process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:39$24'.
+  created $adff cell `$procdff$343' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.\r_SPI_Clk_Edges' using process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:39$24'.
+  created $adff cell `$procdff$348' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.\r_Leading_Edge' using process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:39$24'.
+  created $adff cell `$procdff$353' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.\r_Trailing_Edge' using process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:39$24'.
+  created $adff cell `$procdff$358' with positive edge clock and positive level reset.
+
+18. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+19. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `\SPI_Master_With_Multi_CS.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:111$12'.
+Removing empty process `SPI_Master_With_Multi_CS.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:111$12'.
+Found and cleaned up 6 empty switches in `\SPI_Master_With_Multi_CS.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:63$1'.
+Removing empty process `SPI_Master_With_Multi_CS.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:63$1'.
+Found and cleaned up 2 empty switches in `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:133$73'.
+Removing empty process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:133$73'.
+Removing empty process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:125$71'.
+Found and cleaned up 3 empty switches in `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:106$48'.
+Removing empty process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:106$48'.
+Found and cleaned up 3 empty switches in `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:88$37'.
+Removing empty process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:88$37'.
+Found and cleaned up 1 empty switch in `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:76$35'.
+Removing empty process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:76$35'.
+Found and cleaned up 4 empty switches in `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:39$24'.
+Removing empty process `$paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.$proc$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:39$24'.
+Cleaned up 21 empty switches.
+
+20. Executing CHECK pass (checking for obvious problems).
+Checking module SPI_Master_With_Multi_CS...
+Checking module $paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master...
+Found and reported 0 problems.
+
+21. Executing OPT_EXPR pass (perform const folding).
+Optimizing module SPI_Master_With_Multi_CS.
+<suppressed ~12 debug messages>
+Optimizing module $paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.
+<suppressed ~45 debug messages>
+
+22. Executing FLATTEN pass (flatten design).
+Deleting now unused module $paramod$55aa9ea145d8d55a1392d1e873c504490d7eb141\SPI_Master.
+<suppressed ~1 debug messages>
+
+23. Executing OPT_EXPR pass (perform const folding).
+Optimizing module SPI_Master_With_Multi_CS.
+
+24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \SPI_Master_With_Multi_CS..
+Removed 38 unused cells and 155 unused wires.
+<suppressed ~40 debug messages>
+
+25. Executing OPT_EXPR pass (perform const folding).
+Optimizing module SPI_Master_With_Multi_CS.
+
+26. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\SPI_Master_With_Multi_CS'.
+<suppressed ~45 debug messages>
+Removed a total of 15 cells.
+
+27. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \SPI_Master_With_Multi_CS..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $flatten\SPI_Master_Inst.$procmux$144.
+Removed 1 multiplexer ports.
+<suppressed ~17 debug messages>
+
+28. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \SPI_Master_With_Multi_CS.
+  Optimizing cells in module \SPI_Master_With_Multi_CS.
+Performed a total of 1 changes.
+
+29. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\SPI_Master_With_Multi_CS'.
+Removed a total of 0 cells.
+
+30. Executing OPT_DFF pass (perform DFF optimizations).
+
+31. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \SPI_Master_With_Multi_CS..
+Removed 0 unused cells and 17 unused wires.
+<suppressed ~1 debug messages>
+
+32. Executing OPT_EXPR pass (perform const folding).
+Optimizing module SPI_Master_With_Multi_CS.
+
+33. Rerunning OPT passes. (Maybe there is more to do…)
+
+34. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \SPI_Master_With_Multi_CS..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~17 debug messages>
+
+35. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \SPI_Master_With_Multi_CS.
+Performed a total of 0 changes.
+
+36. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\SPI_Master_With_Multi_CS'.
+Removed a total of 0 cells.
+
+37. Executing OPT_DFF pass (perform DFF optimizations).
+
+38. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \SPI_Master_With_Multi_CS..
+
+39. Executing OPT_EXPR pass (perform const folding).
+Optimizing module SPI_Master_With_Multi_CS.
+
+40. Executing FSM pass (extract and optimize FSM).
+
+40.1. Executing FSM_DETECT pass (finding FSMs in design).
+Not marking SPI_Master_With_Multi_CS.r_SM_CS as FSM state register:
+    Circuit seems to be self-resetting.
+
+40.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+40.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+40.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \SPI_Master_With_Multi_CS..
+
+40.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+40.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+40.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+40.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+41. Executing OPT_EXPR pass (perform const folding).
+Optimizing module SPI_Master_With_Multi_CS.
+
+42. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\SPI_Master_With_Multi_CS'.
+Removed a total of 0 cells.
+
+43. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \SPI_Master_With_Multi_CS..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~17 debug messages>
+
+44. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \SPI_Master_With_Multi_CS.
+Performed a total of 0 changes.
+
+45. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\SPI_Master_With_Multi_CS'.
+Removed a total of 0 cells.
+
+46. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$273 ($adff) from module SPI_Master_With_Multi_CS (D = $0\r_TX_Count[1:0], Q = \r_TX_Count).
+Adding EN signal on $procdff$268 ($adff) from module SPI_Master_With_Multi_CS (D = $0\r_CS_Inactive_Count[1:0], Q = \r_CS_Inactive_Count).
+Adding EN signal on $procdff$263 ($adff) from module SPI_Master_With_Multi_CS (D = $0\r_SM_CS[1:0], Q = \r_SM_CS).
+Adding EN signal on $procdff$258 ($adff) from module SPI_Master_With_Multi_CS (D = $0\o_SPI_CS[3:0], Q = \o_SPI_CS).
+Adding SRST signal on $procdff$253 ($dff) from module SPI_Master_With_Multi_CS (D = $procmux$77_Y, Q = \o_RX_Count, rval = 2'00).
+Adding EN signal on $auto$ff.cc:266:slice$406 ($sdff) from module SPI_Master_With_Multi_CS (D = $add$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:115$14_Y, Q = \o_RX_Count).
+Adding EN signal on $flatten\SPI_Master_Inst.$procdff$348 ($adff) from module SPI_Master_With_Multi_CS (D = $flatten\SPI_Master_Inst.$0\r_SPI_Clk_Edges[4:0], Q = \SPI_Master_Inst.r_SPI_Clk_Edges).
+Adding EN signal on $flatten\SPI_Master_Inst.$procdff$343 ($adff) from module SPI_Master_With_Multi_CS (D = $flatten\SPI_Master_Inst.$procmux$234_Y, Q = \SPI_Master_Inst.r_SPI_Clk).
+Adding EN signal on $flatten\SPI_Master_Inst.$procdff$338 ($adff) from module SPI_Master_With_Multi_CS (D = $flatten\SPI_Master_Inst.$procmux$246_Y, Q = \SPI_Master_Inst.r_SPI_Clk_Count).
+Adding EN signal on $flatten\SPI_Master_Inst.$procdff$328 ($adff) from module SPI_Master_With_Multi_CS (D = \i_TX_Byte, Q = \SPI_Master_Inst.r_TX_Byte).
+Adding EN signal on $flatten\SPI_Master_Inst.$procdff$318 ($adff) from module SPI_Master_With_Multi_CS (D = $flatten\SPI_Master_Inst.$0\r_TX_Bit_Count[2:0], Q = \SPI_Master_Inst.r_TX_Bit_Count).
+Adding EN signal on $flatten\SPI_Master_Inst.$procdff$313 ($adff) from module SPI_Master_With_Multi_CS (D = $flatten\SPI_Master_Inst.$procmux$183_Y, Q = \SPI_Master_Inst.o_SPI_MOSI).
+Adding EN signal on $flatten\SPI_Master_Inst.$procdff$298 ($adff) from module SPI_Master_With_Multi_CS (D = $flatten\SPI_Master_Inst.$0\r_RX_Bit_Count[2:0], Q = \SPI_Master_Inst.r_RX_Bit_Count).
+Adding EN signal on $flatten\SPI_Master_Inst.$procdff$293 ($adff) from module SPI_Master_With_Multi_CS (D = $flatten\SPI_Master_Inst.$or$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:0$68_Y, Q = \SPI_Master_Inst.o_RX_Byte).
+
+47. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \SPI_Master_With_Multi_CS..
+Removed 10 unused cells and 10 unused wires.
+<suppressed ~11 debug messages>
+
+48. Executing OPT_EXPR pass (perform const folding).
+Optimizing module SPI_Master_With_Multi_CS.
+<suppressed ~8 debug messages>
+
+49. Rerunning OPT passes. (Maybe there is more to do…)
+
+50. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \SPI_Master_With_Multi_CS..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~14 debug messages>
+
+51. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \SPI_Master_With_Multi_CS.
+Performed a total of 0 changes.
+
+52. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\SPI_Master_With_Multi_CS'.
+<suppressed ~30 debug messages>
+Removed a total of 10 cells.
+
+53. Executing OPT_DFF pass (perform DFF optimizations).
+
+54. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \SPI_Master_With_Multi_CS..
+Removed 0 unused cells and 10 unused wires.
+<suppressed ~1 debug messages>
+
+55. Executing OPT_EXPR pass (perform const folding).
+Optimizing module SPI_Master_With_Multi_CS.
+
+56. Rerunning OPT passes. (Maybe there is more to do…)
+
+57. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \SPI_Master_With_Multi_CS..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~14 debug messages>
+
+58. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \SPI_Master_With_Multi_CS.
+Performed a total of 0 changes.
+
+59. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\SPI_Master_With_Multi_CS'.
+Removed a total of 0 cells.
+
+60. Executing OPT_DFF pass (perform DFF optimizations).
+
+61. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \SPI_Master_With_Multi_CS..
+
+62. Executing OPT_EXPR pass (perform const folding).
+Optimizing module SPI_Master_With_Multi_CS.
+
+63. Executing WREDUCE pass (reducing word size of cells).
+Removed top 30 bits (of 32) from port A of cell SPI_Master_With_Multi_CS.$shl$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:75$6 ($shl).
+Removed top 28 bits (of 32) from port Y of cell SPI_Master_With_Multi_CS.$not$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:75$7 ($not).
+Removed top 28 bits (of 32) from port A of cell SPI_Master_With_Multi_CS.$not$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:75$7 ($not).
+Removed top 31 bits (of 32) from port B of cell SPI_Master_With_Multi_CS.$gt$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:95$10 ($gt).
+Removed top 1 bits (of 2) from port B of cell SPI_Master_With_Multi_CS.$eq$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:119$16 ($eq).
+Removed top 31 bits (of 32) from port B of cell SPI_Master_With_Multi_CS.$gt$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:119$18 ($gt).
+Removed top 1 bits (of 2) from port B of cell SPI_Master_With_Multi_CS.$auto$opt_dff.cc:195:make_patterns_logic$370 ($ne).
+Removed top 31 bits (of 32) from port B of cell SPI_Master_With_Multi_CS.$flatten\SPI_Master_Inst.$sub$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:117$69 ($sub).
+Removed top 29 bits (of 32) from port Y of cell SPI_Master_With_Multi_CS.$flatten\SPI_Master_Inst.$sub$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:117$69 ($sub).
+Converting cell SPI_Master_With_Multi_CS.$flatten\SPI_Master_Inst.$neg$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:0$62 ($neg) from signed to unsigned.
+Removed top 1 bits (of 4) from port A of cell SPI_Master_With_Multi_CS.$flatten\SPI_Master_Inst.$neg$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:0$62 ($neg).
+Removed top 31 bits (of 32) from port B of cell SPI_Master_With_Multi_CS.$flatten\SPI_Master_Inst.$sub$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:100$46 ($sub).
+Removed top 29 bits (of 32) from port Y of cell SPI_Master_With_Multi_CS.$flatten\SPI_Master_Inst.$sub$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:100$46 ($sub).
+Removed top 31 bits (of 32) from port B of cell SPI_Master_With_Multi_CS.$flatten\SPI_Master_Inst.$add$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:62$31 ($add).
+Removed top 30 bits (of 32) from port Y of cell SPI_Master_With_Multi_CS.$flatten\SPI_Master_Inst.$add$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:62$31 ($add).
+Removed top 1 bits (of 2) from port B of cell SPI_Master_With_Multi_CS.$flatten\SPI_Master_Inst.$eq$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:61$30 ($eq).
+Removed top 31 bits (of 32) from port B of cell SPI_Master_With_Multi_CS.$flatten\SPI_Master_Inst.$sub$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:58$28 ($sub).
+Removed top 27 bits (of 32) from port Y of cell SPI_Master_With_Multi_CS.$flatten\SPI_Master_Inst.$sub$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:58$28 ($sub).
+Removed top 31 bits (of 32) from port B of cell SPI_Master_With_Multi_CS.$flatten\SPI_Master_Inst.$gt$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:54$26 ($gt).
+Removed top 28 bits (of 32) from port Y of cell SPI_Master_With_Multi_CS.$shl$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:75$6 ($shl).
+Removed top 30 bits (of 32) from wire SPI_Master_With_Multi_CS.$flatten\SPI_Master_Inst.$add$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:62$31_Y.
+Removed top 29 bits (of 32) from wire SPI_Master_With_Multi_CS.$flatten\SPI_Master_Inst.$sub$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:100$46_Y.
+Removed top 29 bits (of 32) from wire SPI_Master_With_Multi_CS.$flatten\SPI_Master_Inst.$sub$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:117$69_Y.
+Removed top 27 bits (of 32) from wire SPI_Master_With_Multi_CS.$flatten\SPI_Master_Inst.$sub$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:58$28_Y.
+Removed top 28 bits (of 32) from wire SPI_Master_With_Multi_CS.$not$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:75$7_Y.
+Removed top 28 bits (of 32) from wire SPI_Master_With_Multi_CS.$shl$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:75$6_Y.
+
+64. Executing PEEPOPT pass (run peephole optimizers).
+
+65. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \SPI_Master_With_Multi_CS..
+Removed 0 unused cells and 6 unused wires.
+<suppressed ~1 debug messages>
+
+66. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module SPI_Master_With_Multi_CS:
+  creating $macc model for $add$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:115$14 ($add).
+  creating $macc model for $flatten\SPI_Master_Inst.$add$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:62$31 ($add).
+  creating $macc model for $flatten\SPI_Master_Inst.$neg$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:0$62 ($neg).
+  creating $macc model for $flatten\SPI_Master_Inst.$sub$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:100$46 ($sub).
+  creating $macc model for $flatten\SPI_Master_Inst.$sub$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:117$69 ($sub).
+  creating $macc model for $flatten\SPI_Master_Inst.$sub$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:58$28 ($sub).
+  creating $macc model for $sub$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:74$5 ($sub).
+  creating $macc model for $sub$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:84$9 ($sub).
+  creating $macc model for $sub$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:96$11 ($sub).
+  creating $alu model for $macc $sub$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:96$11.
+  creating $alu model for $macc $sub$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:84$9.
+  creating $alu model for $macc $sub$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:74$5.
+  creating $alu model for $macc $flatten\SPI_Master_Inst.$sub$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:58$28.
+  creating $alu model for $macc $flatten\SPI_Master_Inst.$sub$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:117$69.
+  creating $alu model for $macc $flatten\SPI_Master_Inst.$sub$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:100$46.
+  creating $alu model for $macc $flatten\SPI_Master_Inst.$neg$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:0$62.
+  creating $alu model for $macc $flatten\SPI_Master_Inst.$add$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:62$31.
+  creating $alu model for $macc $add$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:115$14.
+  creating $alu model for $flatten\SPI_Master_Inst.$gt$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:54$26 ($gt): new $alu
+  creating $alu model for $gt$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:119$18 ($gt): new $alu
+  creating $alu model for $gt$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:95$10 ($gt): new $alu
+  creating $alu cell for $gt$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:95$10: $auto$alumacc.cc:485:replace_alu$455
+  creating $alu cell for $gt$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:119$18: $auto$alumacc.cc:485:replace_alu$460
+  creating $alu cell for $flatten\SPI_Master_Inst.$gt$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:54$26: $auto$alumacc.cc:485:replace_alu$465
+  creating $alu cell for $add$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:115$14: $auto$alumacc.cc:485:replace_alu$470
+  creating $alu cell for $flatten\SPI_Master_Inst.$add$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:62$31: $auto$alumacc.cc:485:replace_alu$473
+  creating $alu cell for $flatten\SPI_Master_Inst.$neg$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:0$62: $auto$alumacc.cc:485:replace_alu$476
+  creating $alu cell for $flatten\SPI_Master_Inst.$sub$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:100$46: $auto$alumacc.cc:485:replace_alu$479
+  creating $alu cell for $flatten\SPI_Master_Inst.$sub$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:117$69: $auto$alumacc.cc:485:replace_alu$482
+  creating $alu cell for $flatten\SPI_Master_Inst.$sub$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master.v:58$28: $auto$alumacc.cc:485:replace_alu$485
+  creating $alu cell for $sub$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:74$5: $auto$alumacc.cc:485:replace_alu$488
+  creating $alu cell for $sub$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:84$9: $auto$alumacc.cc:485:replace_alu$491
+  creating $alu cell for $sub$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:96$11: $auto$alumacc.cc:485:replace_alu$494
+  created 12 $alu and 0 $macc cells.
+
+67. Executing SHARE pass (SAT-based resource sharing).
+
+68. Executing OPT_EXPR pass (perform const folding).
+Optimizing module SPI_Master_With_Multi_CS.
+<suppressed ~10 debug messages>
+
+69. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\SPI_Master_With_Multi_CS'.
+Removed a total of 0 cells.
+
+70. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \SPI_Master_With_Multi_CS..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~14 debug messages>
+
+71. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \SPI_Master_With_Multi_CS.
+Performed a total of 0 changes.
+
+72. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\SPI_Master_With_Multi_CS'.
+Removed a total of 0 cells.
+
+73. Executing OPT_DFF pass (perform DFF optimizations).
+
+74. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \SPI_Master_With_Multi_CS..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+75. Executing OPT_EXPR pass (perform const folding).
+Optimizing module SPI_Master_With_Multi_CS.
+
+76. Rerunning OPT passes. (Maybe there is more to do…)
+
+77. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \SPI_Master_With_Multi_CS..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~14 debug messages>
+
+78. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \SPI_Master_With_Multi_CS.
+Performed a total of 0 changes.
+
+79. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\SPI_Master_With_Multi_CS'.
+Removed a total of 0 cells.
+
+80. Executing OPT_DFF pass (perform DFF optimizations).
+
+81. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \SPI_Master_With_Multi_CS..
+
+82. Executing OPT_EXPR pass (perform const folding).
+Optimizing module SPI_Master_With_Multi_CS.
+
+83. Executing MEMORY pass.
+
+83.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+83.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+83.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+83.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+83.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+83.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \SPI_Master_With_Multi_CS..
+
+83.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+83.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+83.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \SPI_Master_With_Multi_CS..
+
+83.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+84. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \SPI_Master_With_Multi_CS..
+
+85. Executing OPT_EXPR pass (perform const folding).
+Optimizing module SPI_Master_With_Multi_CS.
+<suppressed ~30 debug messages>
+
+86. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\SPI_Master_With_Multi_CS'.
+Removed a total of 0 cells.
+
+87. Executing OPT_DFF pass (perform DFF optimizations).
+
+88. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \SPI_Master_With_Multi_CS..
+Removed 0 unused cells and 26 unused wires.
+<suppressed ~1 debug messages>
+
+89. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+90. Executing OPT_EXPR pass (perform const folding).
+Optimizing module SPI_Master_With_Multi_CS.
+
+91. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\SPI_Master_With_Multi_CS'.
+Removed a total of 0 cells.
+
+92. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \SPI_Master_With_Multi_CS..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~13 debug messages>
+
+93. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \SPI_Master_With_Multi_CS.
+    New ctrl vector for $pmux cell $procmux$112: { $eq$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:119$15_Y $eq$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:119$16_Y }
+    New ctrl vector for $pmux cell $procmux$124: $eq$/home/bowang1308/DBQ_designs/SPI_master/SPI_Master_With_Single_CS.v:119$15_Y
+  Optimizing cells in module \SPI_Master_With_Multi_CS.
+Performed a total of 2 changes.
+
+94. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\SPI_Master_With_Multi_CS'.
+Removed a total of 0 cells.
+
+95. Executing OPT_SHARE pass.
+    Found cells that share an operand and can be merged by moving the $mux $procmux$91 in front of them:
+        $auto$alumacc.cc:485:replace_alu$491
+        $auto$alumacc.cc:485:replace_alu$488
+
+96. Executing OPT_DFF pass (perform DFF optimizations).
+
+97. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \SPI_Master_With_Multi_CS..
+Removed 0 unused cells and 6 unused wires.
+<suppressed ~1 debug messages>
+
+98. Executing OPT_EXPR pass (perform const folding).
+Optimizing module SPI_Master_With_Multi_CS.
+<suppressed ~1 debug messages>
+
+99. Rerunning OPT passes. (Maybe there is more to do…)
+
+100. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \SPI_Master_With_Multi_CS..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~13 debug messages>
+
+101. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \SPI_Master_With_Multi_CS.
+Performed a total of 0 changes.
+
+102. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\SPI_Master_With_Multi_CS'.
+Removed a total of 0 cells.
+
+103. Executing OPT_SHARE pass.
+
+104. Executing OPT_DFF pass (perform DFF optimizations).
+
+105. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \SPI_Master_With_Multi_CS..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+106. Executing OPT_EXPR pass (perform const folding).
+Optimizing module SPI_Master_With_Multi_CS.
+
+107. Rerunning OPT passes. (Maybe there is more to do…)
+
+108. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \SPI_Master_With_Multi_CS..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~13 debug messages>
+
+109. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \SPI_Master_With_Multi_CS.
+Performed a total of 0 changes.
+
+110. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\SPI_Master_With_Multi_CS'.
+Removed a total of 0 cells.
+
+111. Executing OPT_SHARE pass.
+
+112. Executing OPT_DFF pass (perform DFF optimizations).
+
+113. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \SPI_Master_With_Multi_CS..
+
+114. Executing OPT_EXPR pass (perform const folding).
+Optimizing module SPI_Master_With_Multi_CS.
+
+115. Executing TECHMAP pass (map to technology primitives).
+
+115.1. Executing Verilog-2005 frontend: /nix/store/9r0bh7sp051dpm8km8bqlb028anpd3v3-yosys/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nix/store/9r0bh7sp051dpm8km8bqlb028anpd3v3-yosys/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+115.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $logic_and.
+Using template $paramod$ba698a254f9a5947e85cbe7beae6b161eefc5386\_90_alu for cells of type $alu.
+Using template $paramod$constmap:4edb66e0d088a61c7edd1b98fbc82bc43943c3a9$paramod$244b2c5d4fd64a2cf8f8849abfe8960b103dffcd\_90_shift_ops_shr_shl_sshl_sshr for cells of type $shl.
+Using extmapper simplemap for cells of type $not.
+Using template $paramod$175e67c02b86e96b1288b9dc100122520d7240d8\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $logic_not.
+Using template $paramod$672a140277c71df8314410f22acc08d55222c3c7\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $logic_or.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $ne.
+Using template $paramod$521ce43182eecb9f60c72393a788160d2c356bf5\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $sdffe.
+Using extmapper simplemap for cells of type $adff.
+Using template $paramod$dc04b7d98e503a7bab16fce2df70e6e2c5ca34d6\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $or.
+Using template $paramod$025d767fc934a3e7d59a671de523743ebaa07759\_90_alu for cells of type $alu.
+Using template $paramod$constmap:9d7c541a436e2c9bb59914d3a53cc61c099f37b0$paramod$40ccfd5a7f1418017a9af25543d0c43a198b5946\_90_shift_shiftx for cells of type $shift.
+Analyzing pattern of constant bits for this cell:
+  Constant input on bit 0 of port A: 1'1
+Creating constmapped module `$paramod$constmap:82d13b1faa4b21cb1487e5b4ddefba1164cb15a1$paramod$40ccfd5a7f1418017a9af25543d0c43a198b5946\_90_shift_shiftx'.
+
+115.25. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$constmap:82d13b1faa4b21cb1487e5b4ddefba1164cb15a1$paramod$40ccfd5a7f1418017a9af25543d0c43a198b5946\_90_shift_shiftx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$912.
+    dead port 2/2 on $mux $procmux$906.
+    dead port 2/2 on $mux $procmux$900.
+Removed 3 multiplexer ports.
+<suppressed ~528 debug messages>
+
+115.26. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$constmap:82d13b1faa4b21cb1487e5b4ddefba1164cb15a1$paramod$40ccfd5a7f1418017a9af25543d0c43a198b5946\_90_shift_shiftx.
+<suppressed ~2 debug messages>
+Removed 0 unused cells and 9 unused wires.
+Using template $paramod$constmap:82d13b1faa4b21cb1487e5b4ddefba1164cb15a1$paramod$40ccfd5a7f1418017a9af25543d0c43a198b5946\_90_shift_shiftx for cells of type $shift.
+Using template $paramod$b8c0a997bce700f23568a5ada79cc6781d1f5ca0\_90_alu for cells of type $alu.
+Using template $paramod$constmap:ee5af906ae0d3d414c6a0471604c553ef70c8e09$paramod$92adee9538f2381d8e5006822c900eb986d754e8\_90_shift_shiftx for cells of type $shiftx.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000010 for cells of type $lcu.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $reduce_or.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000101 for cells of type $lcu.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000100 for cells of type $lcu.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000011 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~777 debug messages>
+
+116. Executing OPT_EXPR pass (perform const folding).
+Optimizing module SPI_Master_With_Multi_CS.
+<suppressed ~336 debug messages>
+
+117. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\SPI_Master_With_Multi_CS'.
+<suppressed ~69 debug messages>
+Removed a total of 23 cells.
+
+118. Executing OPT_DFF pass (perform DFF optimizations).
+
+119. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \SPI_Master_With_Multi_CS..
+Removed 39 unused cells and 443 unused wires.
+<suppressed ~40 debug messages>
+
+120. Executing OPT_EXPR pass (perform const folding).
+Optimizing module SPI_Master_With_Multi_CS.
+
+121. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\SPI_Master_With_Multi_CS'.
+Removed a total of 0 cells.
+
+122. Executing OPT_DFF pass (perform DFF optimizations).
+
+123. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \SPI_Master_With_Multi_CS..
+
+124. Executing ABC pass (technology mapping using ABC).
+
+124.1. Extracting gate netlist of module `\SPI_Master_With_Multi_CS' to `<abc-temp-dir>/input.blif'..
+Extracted 237 gates and 291 wires to a netlist network with 52 inputs and 52 outputs.
+
+124.1.1. Executing ABC.
+Running ABC command: "/nix/store/6l3aj1gi4lja8z5s4lan2k2cfz9mqkrz-yosys-abc/bin/abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+124.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        4
+ABC RESULTS:               MUX cells:       12
+ABC RESULTS:              XNOR cells:        6
+ABC RESULTS:               XOR cells:        8
+ABC RESULTS:               NOT cells:       11
+ABC RESULTS:             ORNOT cells:       10
+ABC RESULTS:              NAND cells:        7
+ABC RESULTS:               NOR cells:       20
+ABC RESULTS:            ANDNOT cells:       59
+ABC RESULTS:                OR cells:       47
+ABC RESULTS:        internal signals:      187
+ABC RESULTS:           input signals:       52
+ABC RESULTS:          output signals:       52
+Removing temp directory.
+
+125. Executing OPT pass (performing simple optimizations).
+
+125.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module SPI_Master_With_Multi_CS.
+<suppressed ~3 debug messages>
+
+125.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\SPI_Master_With_Multi_CS'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+125.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+125.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \SPI_Master_With_Multi_CS..
+Removed 1 unused cells and 193 unused wires.
+<suppressed ~2 debug messages>
+
+125.5. Finished fast OPT passes.
+
+126. Executing HIERARCHY pass (managing design hierarchy).
+
+126.1. Analyzing design hierarchy..
+Top module:  \SPI_Master_With_Multi_CS
+
+126.2. Analyzing design hierarchy..
+Top module:  \SPI_Master_With_Multi_CS
+Removed 0 unused modules.
+
+127. Executing CHECK pass (checking for obvious problems).
+Checking module SPI_Master_With_Multi_CS...
+Found and reported 0 problems.
+
+128. Printing statistics.
+
+=== SPI_Master_With_Multi_CS ===
+
+   Number of wires:                213
+   Number of wire bits:            275
+   Number of public wires:          40
+   Number of public wire bits:      94
+   Number of ports:                 14
+   Number of port bits:             34
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                230
+     $_ANDNOT_                      59
+     $_AND_                          4
+     $_DFFE_PN0P_                   30
+     $_DFFE_PN1P_                   11
+     $_DFF_PN0_                      6
+     $_MUX_                         12
+     $_NAND_                         7
+     $_NOR_                         18
+     $_NOT_                         10
+     $_ORNOT_                       10
+     $_OR_                          47
+     $_SDFFE_PN0P_                   2
+     $_XNOR_                         5
+     $_XOR_                          8
+     $scopeinfo                      1
+
+129. Generating Graphviz representation of design.
+Writing dot description to `/home/bowang1308/DBQ_designs/SPI_master/runs/RUN_2025-06-05_17-26-58/06-yosys-synthesis/primitive_techmap.dot'.
+Dumping module SPI_Master_With_Multi_CS to page 1.
+
+130. Executing OPT pass (performing simple optimizations).
+
+130.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module SPI_Master_With_Multi_CS.
+
+130.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\SPI_Master_With_Multi_CS'.
+Removed a total of 0 cells.
+
+130.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \SPI_Master_With_Multi_CS..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+130.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \SPI_Master_With_Multi_CS.
+Performed a total of 0 changes.
+
+130.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\SPI_Master_With_Multi_CS'.
+Removed a total of 0 cells.
+
+130.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+130.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \SPI_Master_With_Multi_CS..
+
+130.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module SPI_Master_With_Multi_CS.
+
+130.9. Finished OPT passes. (There is nothing left to do.)
+
+131. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \SPI_Master_With_Multi_CS..
+Removed 1 unused cells and 13 unused wires.
+<suppressed ~14 debug messages>
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/bowang1308/DBQ_designs/SPI_master/runs/RUN_2025-06-05_17-26-58/tmp/6d636e7855b545259a8fa4e3959d91bf.lib ",
+   "modules": {
+      "\\SPI_Master_With_Multi_CS": {
+         "num_wires":         200,
+         "num_wire_bits":     247,
+         "num_pub_wires":     27,
+         "num_pub_wire_bits": 66,
+         "num_ports":         14,
+         "num_port_bits":     34,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         229,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 59,
+            "$_AND_": 4,
+            "$_DFFE_PN0P_": 30,
+            "$_DFFE_PN1P_": 11,
+            "$_DFF_PN0_": 6,
+            "$_MUX_": 12,
+            "$_NAND_": 7,
+            "$_NOR_": 18,
+            "$_NOT_": 10,
+            "$_ORNOT_": 10,
+            "$_OR_": 47,
+            "$_SDFFE_PN0P_": 2,
+            "$_XNOR_": 5,
+            "$_XOR_": 8
+         }
+      }
+   },
+      "design": {
+         "num_wires":         200,
+         "num_wire_bits":     247,
+         "num_pub_wires":     27,
+         "num_pub_wire_bits": 66,
+         "num_ports":         14,
+         "num_port_bits":     34,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         229,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 59,
+            "$_AND_": 4,
+            "$_DFFE_PN0P_": 30,
+            "$_DFFE_PN1P_": 11,
+            "$_DFF_PN0_": 6,
+            "$_MUX_": 12,
+            "$_NAND_": 7,
+            "$_NOR_": 18,
+            "$_NOT_": 10,
+            "$_ORNOT_": 10,
+            "$_OR_": 47,
+            "$_SDFFE_PN0P_": 2,
+            "$_XNOR_": 5,
+            "$_XOR_": 8
+         }
+      }
+}
+
+132. Printing statistics.
+
+=== SPI_Master_With_Multi_CS ===
+
+   Number of wires:                200
+   Number of wire bits:            247
+   Number of public wires:          27
+   Number of public wire bits:      66
+   Number of ports:                 14
+   Number of port bits:             34
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                229
+     $_ANDNOT_                      59
+     $_AND_                          4
+     $_DFFE_PN0P_                   30
+     $_DFFE_PN1P_                   11
+     $_DFF_PN0_                      6
+     $_MUX_                         12
+     $_NAND_                         7
+     $_NOR_                         18
+     $_NOT_                         10
+     $_ORNOT_                       10
+     $_OR_                          47
+     $_SDFFE_PN0P_                   2
+     $_XNOR_                         5
+     $_XOR_                          8
+
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_DFF_PN0_ is unknown!
+   Area for cell type $_DFFE_PN0P_ is unknown!
+   Area for cell type $_DFFE_PN1P_ is unknown!
+   Area for cell type $_SDFFE_PN0P_ is unknown!
+
+[INFO] Applying tri-state buffer mapping from '/home/bowang1308/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v'…
+
+133. Executing TECHMAP pass (map to technology primitives).
+
+133.1. Executing Verilog-2005 frontend: /home/bowang1308/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v
+Parsing Verilog input from `/home/bowang1308/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_TBUF_'.
+Successfully finished Verilog frontend.
+
+133.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+134. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+[INFO] Applying latch mapping from '/home/bowang1308/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v'…
+
+135. Executing TECHMAP pass (map to technology primitives).
+
+135.1. Executing Verilog-2005 frontend: /home/bowang1308/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v
+Parsing Verilog input from `/home/bowang1308/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Successfully finished Verilog frontend.
+
+135.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+136. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+137. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_2 (noninv, pins=3, area=21.27) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__dfbbn_2 (noninv, pins=6, area=35.03) is a direct match for cell type $_DFFSR_NNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_2 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_2 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    \sky130_fd_sc_hd__dfbbn_2 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+137.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\SPI_Master_With_Multi_CS':
+  mapped 36 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_2 cells.
+  mapped 11 $_DFF_PN1_ cells to \sky130_fd_sc_hd__dfstp_2 cells.
+  mapped 2 $_DFF_P_ cells to \sky130_fd_sc_hd__dfxtp_2 cells.
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/bowang1308/DBQ_designs/SPI_master/runs/RUN_2025-06-05_17-26-58/tmp/6d636e7855b545259a8fa4e3959d91bf.lib ",
+   "modules": {
+      "\\SPI_Master_With_Multi_CS": {
+         "num_wires":         245,
+         "num_wire_bits":     292,
+         "num_pub_wires":     27,
+         "num_pub_wire_bits": 66,
+         "num_ports":         14,
+         "num_port_bits":     34,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         274,
+         "area":              1277.475200,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 59,
+            "$_AND_": 4,
+            "$_MUX_": 57,
+            "$_NAND_": 7,
+            "$_NOR_": 18,
+            "$_NOT_": 10,
+            "$_ORNOT_": 10,
+            "$_OR_": 47,
+            "$_XNOR_": 5,
+            "$_XOR_": 8,
+            "sky130_fd_sc_hd__dfrtp_2": 36,
+            "sky130_fd_sc_hd__dfstp_2": 11,
+            "sky130_fd_sc_hd__dfxtp_2": 2
+         }
+      }
+   },
+      "design": {
+         "num_wires":         245,
+         "num_wire_bits":     292,
+         "num_pub_wires":     27,
+         "num_pub_wire_bits": 66,
+         "num_ports":         14,
+         "num_port_bits":     34,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         274,
+         "area":              1277.475200,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 59,
+            "$_AND_": 4,
+            "$_MUX_": 57,
+            "$_NAND_": 7,
+            "$_NOR_": 18,
+            "$_NOT_": 10,
+            "$_ORNOT_": 10,
+            "$_OR_": 47,
+            "$_XNOR_": 5,
+            "$_XOR_": 8,
+            "sky130_fd_sc_hd__dfrtp_2": 36,
+            "sky130_fd_sc_hd__dfstp_2": 11,
+            "sky130_fd_sc_hd__dfxtp_2": 2
+         }
+      }
+}
+
+138. Printing statistics.
+
+=== SPI_Master_With_Multi_CS ===
+
+   Number of wires:                245
+   Number of wire bits:            292
+   Number of public wires:          27
+   Number of public wire bits:      66
+   Number of ports:                 14
+   Number of port bits:             34
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                274
+     $_ANDNOT_                      59
+     $_AND_                          4
+     $_MUX_                         57
+     $_NAND_                         7
+     $_NOR_                         18
+     $_NOT_                         10
+     $_ORNOT_                       10
+     $_OR_                          47
+     $_XNOR_                         5
+     $_XOR_                          8
+     sky130_fd_sc_hd__dfrtp_2       36
+     sky130_fd_sc_hd__dfstp_2       11
+     sky130_fd_sc_hd__dfxtp_2        2
+
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+
+   Chip area for module '\SPI_Master_With_Multi_CS': 1277.475200
+     of which used for sequential elements: 1277.475200 (100.00%)
+
+[INFO] Using generated ABC script '/home/bowang1308/DBQ_designs/SPI_master/runs/RUN_2025-06-05_17-26-58/06-yosys-synthesis/AREA_0.abc'…
+
+139. Executing ABC pass (technology mapping using ABC).
+
+139.1. Extracting gate netlist of module `\SPI_Master_With_Multi_CS' to `/tmp/yosys-abc-oDqUAz/input.blif'..
+Extracted 225 gates and 288 wires to a netlist network with 62 inputs and 48 outputs.
+
+139.1.1. Executing ABC.
+Running ABC command: "/nix/store/6l3aj1gi4lja8z5s4lan2k2cfz9mqkrz-yosys-abc/bin/abc" -s -f /tmp/yosys-abc-oDqUAz/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-oDqUAz/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-oDqUAz/input.blif 
+ABC: + read_lib -w /home/bowang1308/DBQ_designs/SPI_master/runs/RUN_2025-06-05_17-26-58/tmp/6d636e7855b545259a8fa4e3959d91bf.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.04 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/home/bowang1308/DBQ_designs/SPI_master/runs/RUN_2025-06-05_17-26-58/tmp/6d636e7855b545259a8fa4e3959d91bf.lib" has 175 cells (17 skipped: 14 seq; 3 tri-state; 0 no func; 0 dont_use).  Time =     0.07 sec
+ABC: Memory =    9.54 MB. Time =     0.07 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + read_constr -v /home/bowang1308/DBQ_designs/SPI_master/runs/RUN_2025-06-05_17-26-58/06-yosys-synthesis/synthesis.abc.sdc 
+ABC: Setting driving cell to be "sky130_fd_sc_hd__inv_2/Y".
+ABC: Setting output load to be 33.442001.
+ABC: + source /home/bowang1308/DBQ_designs/SPI_master/runs/RUN_2025-06-05_17-26-58/06-yosys-synthesis/AREA_0.abc 
+ABC: Error: The network is combinational.
+ABC: Cannot find the default PI driving cell (sky130_fd_sc_hd__inv_2/Y) in the library.
+ABC: WireLoad = "none"  Gates =    119 (  7.6 %)   Cap = 14.3 ff (  7.2 %)   Area =     1123.58 ( 70.6 %)   Delay =  1474.07 ps  (  2.5 %)               
+ABC: Path  0 --      21 : 0    4 pi                        A =   0.00  Df =   0.0   -0.0 ps  S =   0.0 ps  Cin =  0.0 ff  Cout =  13.3 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --     120 : 3    3 sky130_fd_sc_hd__or3_2    A =   7.51  Df = 493.7 -378.9 ps  S = 103.3 ps  Cin =  1.5 ff  Cout =  10.9 ff  Cmax = 310.4 ff  G =  668  
+ABC: Path  2 --     154 : 3    2 sky130_fd_sc_hd__or3_2    A =   7.51  Df = 936.9 -701.4 ps  S =  91.1 ps  Cin =  1.5 ff  Cout =   6.9 ff  Cmax = 310.4 ff  G =  440  
+ABC: Path  3 --     156 : 4    1 sky130_fd_sc_hd__a211oi_2 A =  12.51  Df =1474.1 -590.4 ps  S = 618.7 ps  Cin =  4.4 ff  Cout =  33.4 ff  Cmax =  88.8 ff  G =  767  
+ABC: Start-point = pi20 (\SPI_Master_Inst.r_SPI_Clk_Edges [2]).  End-point = po12 ($auto$rtlil.cc:2739:MuxGate$1756).
+ABC: netlist                       : i/o =   62/   48  lat =    0  nd =   119  edge =    341  area =1123.67  delay = 4.00  lev = 4
+ABC: + write_blif /tmp/yosys-abc-oDqUAz/output.blif 
+
+139.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__nor3_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__and3b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand2b_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__and4_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__inv_2 cells:        9
+ABC RESULTS:   sky130_fd_sc_hd__o311a_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a311oi_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a21o_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__and2_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a41o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a21boi_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand2_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__or3b_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__and2b_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__o21ba_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or4_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a32o_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o31a_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a31o_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__o21a_2 cells:        7
+ABC RESULTS:   sky130_fd_sc_hd__nor2_2 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__mux4_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__mux2_1 cells:       22
+ABC RESULTS:   sky130_fd_sc_hd__or2_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__a22o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__xor2_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__xnor2_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__o21bai_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__or3_2 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__or4bb_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a211oi_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_2 cells:        5
+ABC RESULTS:        internal signals:      178
+ABC RESULTS:           input signals:       62
+ABC RESULTS:          output signals:       48
+Removing temp directory.
+
+140. Executing SETUNDEF pass (replace undef values with defined constants).
+
+141. Executing HILOMAP pass (mapping to constant drivers).
+
+142. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+143. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \SPI_Master_With_Multi_CS..
+Removed 0 unused cells and 289 unused wires.
+<suppressed ~1 debug messages>
+
+144. Executing INSBUF pass (insert buffer cells for connected wires).
+
+145. Executing CHECK pass (checking for obvious problems).
+Checking module SPI_Master_With_Multi_CS...
+Found and reported 0 problems.
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/bowang1308/DBQ_designs/SPI_master/runs/RUN_2025-06-05_17-26-58/tmp/6d636e7855b545259a8fa4e3959d91bf.lib ",
+   "modules": {
+      "\\SPI_Master_With_Multi_CS": {
+         "num_wires":         164,
+         "num_wire_bits":     184,
+         "num_pub_wires":     46,
+         "num_pub_wire_bits": 66,
+         "num_ports":         14,
+         "num_port_bits":     34,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         168,
+         "area":              2401.052800,
+         "num_cells_by_type": {
+            "sky130_fd_sc_hd__a211oi_2": 2,
+            "sky130_fd_sc_hd__a21boi_2": 1,
+            "sky130_fd_sc_hd__a21o_2": 2,
+            "sky130_fd_sc_hd__a21oi_2": 5,
+            "sky130_fd_sc_hd__a22o_2": 1,
+            "sky130_fd_sc_hd__a311oi_2": 2,
+            "sky130_fd_sc_hd__a31o_2": 3,
+            "sky130_fd_sc_hd__a32o_2": 2,
+            "sky130_fd_sc_hd__a41o_2": 1,
+            "sky130_fd_sc_hd__and2_2": 3,
+            "sky130_fd_sc_hd__and2b_2": 3,
+            "sky130_fd_sc_hd__and3b_2": 1,
+            "sky130_fd_sc_hd__and4_2": 1,
+            "sky130_fd_sc_hd__dfrtp_2": 36,
+            "sky130_fd_sc_hd__dfstp_2": 11,
+            "sky130_fd_sc_hd__dfxtp_2": 2,
+            "sky130_fd_sc_hd__inv_2": 9,
+            "sky130_fd_sc_hd__mux2_1": 22,
+            "sky130_fd_sc_hd__mux4_2": 2,
+            "sky130_fd_sc_hd__nand2_2": 3,
+            "sky130_fd_sc_hd__nand2b_2": 2,
+            "sky130_fd_sc_hd__nor2_2": 8,
+            "sky130_fd_sc_hd__nor3_2": 2,
+            "sky130_fd_sc_hd__o21a_2": 7,
+            "sky130_fd_sc_hd__o21ai_2": 5,
+            "sky130_fd_sc_hd__o21ba_2": 1,
+            "sky130_fd_sc_hd__o21bai_2": 3,
+            "sky130_fd_sc_hd__o311a_2": 1,
+            "sky130_fd_sc_hd__o31a_2": 2,
+            "sky130_fd_sc_hd__or2_2": 5,
+            "sky130_fd_sc_hd__or3_2": 6,
+            "sky130_fd_sc_hd__or3b_2": 5,
+            "sky130_fd_sc_hd__or4_2": 2,
+            "sky130_fd_sc_hd__or4bb_2": 2,
+            "sky130_fd_sc_hd__xnor2_2": 3,
+            "sky130_fd_sc_hd__xor2_2": 2
+         }
+      }
+   },
+      "design": {
+         "num_wires":         164,
+         "num_wire_bits":     184,
+         "num_pub_wires":     46,
+         "num_pub_wire_bits": 66,
+         "num_ports":         14,
+         "num_port_bits":     34,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         168,
+         "area":              2401.052800,
+         "num_cells_by_type": {
+            "sky130_fd_sc_hd__a211oi_2": 2,
+            "sky130_fd_sc_hd__a21boi_2": 1,
+            "sky130_fd_sc_hd__a21o_2": 2,
+            "sky130_fd_sc_hd__a21oi_2": 5,
+            "sky130_fd_sc_hd__a22o_2": 1,
+            "sky130_fd_sc_hd__a311oi_2": 2,
+            "sky130_fd_sc_hd__a31o_2": 3,
+            "sky130_fd_sc_hd__a32o_2": 2,
+            "sky130_fd_sc_hd__a41o_2": 1,
+            "sky130_fd_sc_hd__and2_2": 3,
+            "sky130_fd_sc_hd__and2b_2": 3,
+            "sky130_fd_sc_hd__and3b_2": 1,
+            "sky130_fd_sc_hd__and4_2": 1,
+            "sky130_fd_sc_hd__dfrtp_2": 36,
+            "sky130_fd_sc_hd__dfstp_2": 11,
+            "sky130_fd_sc_hd__dfxtp_2": 2,
+            "sky130_fd_sc_hd__inv_2": 9,
+            "sky130_fd_sc_hd__mux2_1": 22,
+            "sky130_fd_sc_hd__mux4_2": 2,
+            "sky130_fd_sc_hd__nand2_2": 3,
+            "sky130_fd_sc_hd__nand2b_2": 2,
+            "sky130_fd_sc_hd__nor2_2": 8,
+            "sky130_fd_sc_hd__nor3_2": 2,
+            "sky130_fd_sc_hd__o21a_2": 7,
+            "sky130_fd_sc_hd__o21ai_2": 5,
+            "sky130_fd_sc_hd__o21ba_2": 1,
+            "sky130_fd_sc_hd__o21bai_2": 3,
+            "sky130_fd_sc_hd__o311a_2": 1,
+            "sky130_fd_sc_hd__o31a_2": 2,
+            "sky130_fd_sc_hd__or2_2": 5,
+            "sky130_fd_sc_hd__or3_2": 6,
+            "sky130_fd_sc_hd__or3b_2": 5,
+            "sky130_fd_sc_hd__or4_2": 2,
+            "sky130_fd_sc_hd__or4bb_2": 2,
+            "sky130_fd_sc_hd__xnor2_2": 3,
+            "sky130_fd_sc_hd__xor2_2": 2
+         }
+      }
+}
+
+146. Printing statistics.
+
+=== SPI_Master_With_Multi_CS ===
+
+   Number of wires:                164
+   Number of wire bits:            184
+   Number of public wires:          46
+   Number of public wire bits:      66
+   Number of ports:                 14
+   Number of port bits:             34
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                168
+     sky130_fd_sc_hd__a211oi_2       2
+     sky130_fd_sc_hd__a21boi_2       1
+     sky130_fd_sc_hd__a21o_2         2
+     sky130_fd_sc_hd__a21oi_2        5
+     sky130_fd_sc_hd__a22o_2         1
+     sky130_fd_sc_hd__a311oi_2       2
+     sky130_fd_sc_hd__a31o_2         3
+     sky130_fd_sc_hd__a32o_2         2
+     sky130_fd_sc_hd__a41o_2         1
+     sky130_fd_sc_hd__and2_2         3
+     sky130_fd_sc_hd__and2b_2        3
+     sky130_fd_sc_hd__and3b_2        1
+     sky130_fd_sc_hd__and4_2         1
+     sky130_fd_sc_hd__dfrtp_2       36
+     sky130_fd_sc_hd__dfstp_2       11
+     sky130_fd_sc_hd__dfxtp_2        2
+     sky130_fd_sc_hd__inv_2          9
+     sky130_fd_sc_hd__mux2_1        22
+     sky130_fd_sc_hd__mux4_2         2
+     sky130_fd_sc_hd__nand2_2        3
+     sky130_fd_sc_hd__nand2b_2       2
+     sky130_fd_sc_hd__nor2_2         8
+     sky130_fd_sc_hd__nor3_2         2
+     sky130_fd_sc_hd__o21a_2         7
+     sky130_fd_sc_hd__o21ai_2        5
+     sky130_fd_sc_hd__o21ba_2        1
+     sky130_fd_sc_hd__o21bai_2       3
+     sky130_fd_sc_hd__o311a_2        1
+     sky130_fd_sc_hd__o31a_2         2
+     sky130_fd_sc_hd__or2_2          5
+     sky130_fd_sc_hd__or3_2          6
+     sky130_fd_sc_hd__or3b_2         5
+     sky130_fd_sc_hd__or4_2          2
+     sky130_fd_sc_hd__or4bb_2        2
+     sky130_fd_sc_hd__xnor2_2        3
+     sky130_fd_sc_hd__xor2_2         2
+
+   Chip area for module '\SPI_Master_With_Multi_CS': 2401.052800
+     of which used for sequential elements: 1277.475200 (53.20%)
+
+147. Executing Verilog backend.
+Dumping module `\SPI_Master_With_Multi_CS'.
+
+148. Executing JSON backend.

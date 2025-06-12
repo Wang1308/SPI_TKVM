@@ -1,0 +1,40 @@
+Reading technology LEF file at '/home/bowang1308/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef'…
+[INFO ODB-0227] LEF file: /home/bowang1308/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef, created 14 layers, 25 vias
+Reading cell LEF file at '/home/bowang1308/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef'…
+[WARNING ODB-0220] WARNING (LEFPARS-2008): NOWIREEXTENSIONATPIN statement is obsolete in version 5.6 or later.
+The NOWIREEXTENSIONATPIN statement will be ignored. See file /home/bowang1308/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef at line 2.
+
+[INFO ODB-0227] LEF file: /home/bowang1308/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef, created 437 library cells
+Reading cell LEF file at '/home/bowang1308/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef'…
+[WARNING ODB-0220] WARNING (LEFPARS-2008): NOWIREEXTENSIONATPIN statement is obsolete in version 5.6 or later.
+The NOWIREEXTENSIONATPIN statement will be ignored. See file /home/bowang1308/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef at line 2.
+
+[INFO ODB-0227] LEF file: /home/bowang1308/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef, created 4 library cells
+[INFO ODB-0127] Reading DEF file: /home/bowang1308/DBQ_designs/SPI_master/runs/RUN_2025-06-05_17-26-58/52-odb-cellfrequencytables/SPI_Master_With_Multi_CS.def
+[INFO ODB-0128] Design: SPI_Master_With_Multi_CS
+[INFO ODB-0130]     Created 36 pins.
+[INFO ODB-0131]     Created 609 components and 3122 component-terminals.
+[INFO ODB-0132]     Created 2 special nets and 2302 connections.
+[INFO ODB-0133]     Created 264 nets and 817 connections.
+[INFO ODB-0134] Finished DEF file: /home/bowang1308/DBQ_designs/SPI_master/runs/RUN_2025-06-05_17-26-58/52-odb-cellfrequencytables/SPI_Master_With_Multi_CS.def
+Using RCX ruleset '/home/bowang1308/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/rules.openrcx.sky130A.nom.calibre'…
+[INFO RCX-0431] Defined process_corner CURRENT_CORNER with ext_model_index 0
+[INFO RCX-0029] Defined extraction corner CURRENT_CORNER
+[INFO RCX-0435] Reading extraction model file /home/bowang1308/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/rules.openrcx.sky130A.nom.calibre ...
+[INFO RCX-0436] RC segment generation SPI_Master_With_Multi_CS (max_merge_res 50.0) ...
+[INFO RCX-0040] Final 905 rc segments
+[INFO RCX-0439] Coupling Cap extraction SPI_Master_With_Multi_CS ...
+[INFO RCX-0440] Coupling threshhold is 0.1000 fF, coupling capacitance less than 0.1000 fF will be grounded.
+[INFO RCX-0442] 52% of 1611 wires extracted
+[INFO RCX-0442] 100% of 1611 wires extracted
+[INFO RCX-0045] Extract 264 nets, 1169 rsegs, 1169 caps, 1655 ccs
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+Updating metrics…
+Cell type report:                       Count       Area
+  Fill cell                               291    1730.41
+  Tap cell                                 67      83.83
+  Standard cell                           251    2877.76
+  Total                                   609    4692.00
+Writing extracted parasitics to '/home/bowang1308/DBQ_designs/SPI_master/runs/RUN_2025-06-05_17-26-58/53-openroad-rcx/nom/SPI_Master_With_Multi_CS.nom.spef'…
+[INFO RCX-0443] 264 nets finished

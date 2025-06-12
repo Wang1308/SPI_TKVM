@@ -1,0 +1,1 @@
+openroad -exit -no_splash -metrics /home/bowang1308/DBQ_designs/SPI_master/runs/RUN_2025-06-05_17-26-58/24-openroad-ioplacement/or_metrics_out.json /nix/store/ss2cw3sxbrwwx9jl0rrppbw4kgcmgi2n-python3-3.11.9-env/lib/python3.11/site-packages/openlane/scripts/openroad/ioplacer.tcl
